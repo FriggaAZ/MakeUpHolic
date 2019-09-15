@@ -208,9 +208,13 @@ class LoginView(View):
                 # 记录用户登录状态
                 login(request, user)
 
-                # 跳转到首页
-                response = redirect(reverse('goods:index'))
+                # 获取登录后所跳转到的地址
+                # 如果没获取到next的值，就返回reverse(),默认跳转到首页
+                next_url = request.GET.get('next', reverse('goods:index'))
 
+                # 跳转到首页
+                response = redirect(next_url)
+                # response = redirect(reverse('goods:index'))
                 # 判断是否需要记住用户名
                 remember = request.POST.get('remember')
                 if remember == 'on':
@@ -226,3 +230,38 @@ class LoginView(View):
         else:
             # 用户名密码错误
             return render(request, 'login.html', {'errmsg': '用户名或密码错误或未激活'})
+
+
+# /user
+class UserInfoView(View):
+    '''用户中心-信息页面'''
+    def get(self, request):
+        '''显示 '''
+        # page='user'
+        return render(request, 'user_center_info.html', {'page': 'user'})
+
+
+# /user/order
+class UserOrderView(View):
+    '''用户中心-订单页面'''
+    def get(self, request):
+        '''显示 变黄'''
+        # page='order'
+        return render(request, 'user_center_order.html', {'page': 'order'})
+
+
+# /user/address
+class AddressView(View):
+    '''用户中心-地址'''
+    def get(self, request):
+        '''显示 '''
+        # page='address'
+        return render(request, 'user_center_site.html', {'page': 'address'})
+
+
+
+
+
+
+
+
