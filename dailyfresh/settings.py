@@ -151,3 +151,12 @@ SESSION_CACHE_ALIAS = "default"
 
 # 配置login_required()修改默认的accounts/login登录url地址
 LOGIN_URL = '/user/login'
+
+# 设置Django文件存储类
+DEFAULT_FILE_STORAGE='utils.fdfs.storage.FDFSStorage'
+
+# 设置fdfs使用的client.conf文件路径
+FDFS_CLIENT_CONF = './utils/fdfs/client.conf'
+
+# 设置fdfs存储服务器商Nginx的IP和Port
+FDFS_URL = 'http://192.168.115.131:8888/'

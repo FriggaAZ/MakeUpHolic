@@ -1,5 +1,6 @@
 from django.conf.urls import url
-from goods import views
+from goods.views import IndexView
+
 urlpatterns = [
-    url(r'^$',views.index, name='index')  # 首页
+    url(r'^$', IndexView.as_view(), name='index'),  # 首页
 ]
