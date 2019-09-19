@@ -40,6 +40,7 @@ class IndexView(View):
 
         # 获取用户购物车中商品的数目
         user = request.user
+
         cart_count = 0
         if user.is_authenticated():
             # 用户已登录
