@@ -42,9 +42,15 @@ class GoodsTypeAdmin(BaseModelAdmin):
     pass
 
 
-admin.site.register(GoodsType, GoodsTypeAdmin)
-# admin.site.register(GoodsSKU)
-admin.site.register(IndexGoodsBanner, IndexGoodsBannerAdmin)
+# admin.site.register(GoodsType, GoodsTypeAdmin)
+admin.site.register(GoodsSKU)
+
+
+# admin.site.register(IndexGoodsBanner, IndexGoodsBannerAdmin)
+
+
 # admin.site.register(GoodsImage)
-admin.site.register(IndexTypeGoodsBanner, IndexTypeGoodsBannerAdmin)
-admin.site.register(IndexPromotionBanner, IndexPromotionBannerAdmin)
+
+
+# admin.site.register(IndexTypeGoodsBanner, IndexTypeGoodsBannerAdmin)
+# admin.site.register(IndexPromotionBanner, IndexPromotionBannerAdmin)
